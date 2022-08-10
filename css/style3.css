@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        font-family: 'Indie Flower', cursive;
+    background: linear-gradient(45deg,#BBF1C4,#F4B5C7,#C3B1E1,#Fefee1);
+    background-size: 1000% 1000%;
+    animation: color 8s ease-in-out infinite;
+}
+img{width:100%}
+@keyframes color{
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0 50%;}
+}
+.container{
+display: grid;
+height: 100vh;
+width:50vw;
+grid-template-columns: 0.2fr auto 0.2fr;
+grid-template-rows: auto auto auto auto auto auto;
+grid-template-areas:
+"nav nav nav"
+"header header header"
+"main main main"
+"main main main"
+"main main main"
+"footer footer footer"
+}
+nav{
+grid-area: nav;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+    .btn{
+    text-decoration: none;
+    padding: 5px 30px;
+    font-size: 1.0rem;
+    position: relative;
+    }
+    .styleBtn{
+     display: inline-flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    }
+    .btn {
+    overflow: hidden;
+    color:white;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgba(204,153,255,0.5), 0 0 0 0 rgba(255,204,255,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn::after{
+    content: "";
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-color:#ff2ba3 ;
+    background-image: linear-gradient(225deg,	 #ccffcc 0%,#ffccff 50%, #d9b3ff 100%);
+    z-index: -1;
+    transition: transform 0.5s ease;
+    }
+    .btn:hover{
+    transform: translate(0, -6px);
+    box-shadow:  10px -10px 25px 0 rgba(204,153,255,0.5),10px +10px 25px 0 rgba(255,204,255,0.5);
+
+    }
+header{
+  grid-area: header;
+}
+main{
+grid-area: main;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+footer{
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  i{
+    color: white;
+    font-size: 35px;
+    padding: 10px;
+  }
+
+
+
+
+
+.formContainer{
+
+width: 600px;
+height: 550px;
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+backdrop-filter: blur(5px);
+box-shadow: 1px solid rgba(255,255,255,0.5);
+border-right: 1px solid rgba(255,255,255,0.2);
+border-bottom: 1px solid rgba(255,255,255,0.2);
+
+}
+.formContainer{
+  max-width: 100%;
+}
+
+.subFormContainer{
+
+  width: 100%;
+  height: 100%
+  padding: 40px;
+
+}
+
+subFormContainer{
+  position: absolute;
+  font-size: 25px;
+}
+
+label{
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/*label .label::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: #fff;
+} */
+
+.subFormContainer .inputBox {
+width: 99%;
+margin-top: 20px;
+}
+
+
+.subFormContainer .inputBox input{
+  width: 90%;
+ background: rgba(255,255,255,0.2);
+ border: none;
+ outline: none;
+ padding: 10px 20px;
+ border-radius: 35px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.subFormContainer .inputArea textarea{
+    width: 90%;
+   background: rgba(255,255,255,0.2);
+   margin-top: 20px;
+   margin-left: 20px;
+   margin-right: 10px;
+   border: none;
+   outline: none;
+   padding: 100px 10px;
+   border-radius: 35px;
+
+}
+
+.subFormContainer .inputBoxButton {
+width: 99%;
+margin-top: 20px;
+}
+.subFormContainer .inputBoxButton input{
+  width: 95%;
+ background: rgba(255,255,255,0.2);
+ border: none;
+ outline: none;
+ padding: 10px 20px;
+ border-radius: 35px;
+ margin-left: 20px;
+ border: 1px solid rgba(255,255,255,0.5);
+ border-right: 1px solid rgba(255,255,255,0.2);
+ border-bottom: 1px solid rgba(255,255,255,0.2);
+ color: white;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 500px){
+    body{
+
+     display: flex;
+        justify-content: space-between;
+    }
+    .container{
+        display: grid;
+      grid-template-columns: 390px;
+    grid-template-rows: 0.1fr 0.2fr auto 0.2fr;
+    grid-template-areas: 
+    "nav"
+    "header"
+    "main"
+    "footer"
+    }
+    nav{
+        grid-area: nav;
+
+       
+    }
+    header{
+        grid-area: header;
+    
+          }
+    main{
+        grid-area:main;
+    
+
+        }
+    footer{
+        grid-area:footer;
+      
+          }
+                  
+            .btn{
+ font-size: 0.2rem;
+}
+.formContainer{
+  max-width: 80%;
+}
+        }
+        
